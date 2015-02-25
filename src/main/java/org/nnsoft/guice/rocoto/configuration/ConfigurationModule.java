@@ -16,8 +16,6 @@ package org.nnsoft.guice.rocoto.configuration;
  *    limitations under the License.
  */
 
-import static com.google.inject.internal.util.$Preconditions.checkNotNull;
-import static com.google.inject.internal.util.$Preconditions.checkState;
 import static com.google.inject.name.Names.named;
 import static java.lang.String.format;
 import static org.nnsoft.guice.rocoto.configuration.PropertiesIterator.newPropertiesIterator;
@@ -38,6 +36,8 @@ import org.nnsoft.guice.rocoto.configuration.binder.XMLPropertiesFormatBindingBu
 
 import com.google.inject.AbstractModule;
 import com.google.inject.ProvisionException;
+
+import static com.google.common.base.Preconditions.*;
 
 /**
  * The ConfigurationModule simplifies the task of loading configurations in Google Guice.
@@ -99,9 +99,8 @@ public abstract class ConfigurationModule
      * @param name The property name
      * @return The property value binder
      */
-    protected PropertyValueBindingBuilder bindProperty( final String name )
-    {
-        checkNotNull( name, "Property name cannot be null." );
+    protected PropertyValueBindingBuilder bindProperty( final String name) {
+      checkNotNull(name, "Property name cannot be null.");
 
         return new PropertyValueBindingBuilder()
         {

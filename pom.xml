@@ -25,7 +25,7 @@
 
   <groupId>org.99soft.guice</groupId>
   <artifactId>rocoto</artifactId>
-  <version>6.3-SNAPSHOT</version>
+  <version>6.2</version>
   <packaging>bundle</packaging>
 
   <name>99soft :: Rocoto</name>
@@ -114,7 +114,7 @@
               !com.google.inject*,
               *
             </Import-Package>
-            <Fragment-Host>com.google.inject;bundle-version="[3.0.0,4)"</Fragment-Host>
+            <Fragment-Host>com.google.inject;bundle-version="4.0-beta5"</Fragment-Host>
           </instructions>
           <unpackBundle>true</unpackBundle>
         </configuration>
@@ -133,11 +133,17 @@
     <dependency>
       <groupId>com.google.inject</groupId>
       <artifactId>guice</artifactId>
-      <version>3.0</version>
+      <version>4.0-beta5</version>
       <scope>compile</scope>
     </dependency>
 
     <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>18.0</version>
+    </dependency>
+
+      <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.10</version>

@@ -16,7 +16,6 @@ package org.nnsoft.guice.rocoto.configuration;
  *    limitations under the License.
  */
 
-import static com.google.inject.internal.util.$Preconditions.checkNotNull;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -25,6 +24,8 @@ import java.net.URLConnection;
 import java.util.Properties;
 
 import org.nnsoft.guice.rocoto.configuration.binder.XMLPropertiesFormatBindingBuilder;
+
+import static com.google.common.base.Preconditions.*;
 
 /**
  * {@link Properties} reader implementation able to read configuration files from classpath, file system or URLs.
